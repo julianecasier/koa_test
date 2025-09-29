@@ -1,9 +1,9 @@
 // modules/user/presentation/routes/userRoutes.ts
 import Router from '@koa/router';
-import { UserController } from './user.controller.ts';
+import { UserController } from './user.controller';
 
 export function createUserRoutes(userController: UserController): Router {
-  const router = new Router({ prefix: '/users' });
+  const router = new Router();
 
   router.post('/', userController.create.bind(userController));
 

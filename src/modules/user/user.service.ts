@@ -1,5 +1,5 @@
 import { User } from '@prisma/client';
-import { UserRepository } from './user-repository';
+import { UserRepository } from './user.repository';
 import { CreateUserDto, UpdateUserDto } from './user-types';
 
 export class UserService {

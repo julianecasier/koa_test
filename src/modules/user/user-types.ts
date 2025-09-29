@@ -25,10 +25,3 @@ export interface UpdateUserDto {
  */
 export type UserResponse = Omit<User, 'password'>;
 
-/**
- * Convertit un User en UserResponse (sans mot de passe)
- */
-export function toUserResponse(user: User): UserResponse {
-  const { password, ...userWithoutPassword } = user;
-  return userWithoutPassword;
-}
