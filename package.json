@@ -1,11 +1,9 @@
 {
   "name": "koa_test",
   "scripts": {
+    "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "nodemon --exec ts-node -r tsconfig-paths/register src/index.ts",
-    "migrate:dev:create": "prisma migrate dev --create-only --preview-feature",
-    "prisma:generate": "prisma generate"
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "@koa/router": "^14.0.0",
@@ -16,12 +14,13 @@
     "koa-bodyparser": "^4.4.1",
     "koa-json": "^2.0.2",
     "koa-logger": "^4.0.0",
+    "tsc-watch": "^7.2.0",
+    "tsx": "^4.20.6",
     "zod": "^4.1.11"
   },
   "devDependencies": {
     "@types/koa": "^3.0.0",
     "@types/koa__router": "^12.0.4",
-    "nodemon": "^3.1.10",
     "prisma": "^6.16.2",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",

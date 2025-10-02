@@ -1,9 +1,9 @@
 Controller (HTTP)
-    ↓ appelle
+↓ appelle
 Service (Logique métier)
-    ↓ utilise
+↓ utilise
 Repository (Base de données)
-    ↓ utilise
+↓ utilise
 Prisma (ORM)
-    ↓ parle à
+↓ parle à
 PostgreSQL (Database)
