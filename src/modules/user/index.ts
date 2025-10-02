@@ -1,9 +1,7 @@
-
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
 import { UserRepository } from './user.repository';
 import { createUserRoutes } from './user.routes';
-
 
 const userRepository = new UserRepository();
 const userService = new UserService(userRepository);

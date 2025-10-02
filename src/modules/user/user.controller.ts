@@ -1,6 +1,6 @@
 import { Context } from 'koa';
 import { UserService } from './user.service';
-import { CreateUserDto, UpdateUserDto,} from './user-types';
+import { CreateUserDto, UpdateUserDto } from './user-types';
 import { toUserResponse } from './user-mappers';
 
 export class UserController {
@@ -11,7 +11,6 @@ export class UserController {
    */
   async create(ctx: Context): Promise<void> {
     const data: CreateUserDto = ctx.request.body;
-
 
     if (!data.email || !data.firstName || !data.lastName || !data.password) {
       ctx.throw(400, 'Tous les champs sont requis');

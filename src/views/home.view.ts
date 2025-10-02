@@ -1,15 +1,9 @@
-interface Route {
-  path: string;
-  methods: string[];
-}
-
 interface HomePageData {
   port: string;
   systemRoutes: {
     path: string | RegExp;
     methods: string[];
   }[];
-
 }
 
 export const renderHomePage = (data: HomePageData): string => {
@@ -144,13 +138,13 @@ export const renderHomePage = (data: HomePageData): string => {
             <div class="route-list">
               ${data.systemRoutes
                 .map(
-                  (route) => `
+                  route => `
                 <div class="route-item">
                   <div class="route-path">${route.path}</div>
                   <div class="route-methods">
                     ${route.methods
                       .map(
-                        (method) =>
+                        method =>
                           `<span class="method-badge method-${method.toLowerCase()}">${method}</span>`
                       )
                       .join('')}

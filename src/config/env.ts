@@ -16,7 +16,7 @@ export function env(key: string, defaultValue?: string): string {
 }
 
 export const serverConfig = {
-  port: env('PORT', '3000'), 
+  port: env('PORT', '3000'),
   nodeEnv: env('NODE_ENV', 'development'),
   apiPrefix: env('API_PREFIX', '/api'),
   databaseUrl: env('DATABASE_URL'),

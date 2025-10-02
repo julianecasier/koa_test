@@ -94,6 +94,8 @@ build/Release
 ehthumbs.db
 Thumbs.db
 
+
+.git
 # Build directories
 dist/
 build/

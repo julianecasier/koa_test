@@ -1,17 +1,15 @@
-import { Context, Next } from "koa";
-import { isHttpError } from "utils/type-guards";
+import { Context, Next } from 'koa';
+import { isHttpError } from 'utils/type-guards';
 
 export async function errorHandler(ctx: Context, next: Next) {
   try {
     await next();
   } catch (err: unknown) {
-
     let status = 500;
     let message = 'Erreur interne du serveur';
     let expose = false;
 
     if (isHttpError(err)) {
-
       status = err.status || err.statusCode || 500;
       message = err.message;
       expose = err.expose ?? status < 500; // Exposer les erreurs 4xx par défaut

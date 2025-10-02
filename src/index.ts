@@ -7,11 +7,9 @@ import { serverConfig } from 'config/env';
 
 const app = new Koa();
 
+app.use(errorHandler);
 
-app.use(errorHandler); 
-
-app.use(bodyParser()); 
-
+app.use(bodyParser());
 
 app.use(router.routes());
 app.use(router.allowedMethods());

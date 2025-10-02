@@ -24,4 +24,3 @@ export interface UpdateUserDto {
  * Utilisateur sans le mot de passe (pour les réponses API)
  */
 export type UserResponse = Omit<User, 'password'>;
-
