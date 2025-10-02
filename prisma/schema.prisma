@@ -25,10 +25,13 @@ password String?
 
 
 model Task {
-id Int     @id @default(autoincrement())
-date String? 
+id         String    @id @default(cuid())
+dueDate String? 
 title        String
 content  String?
 author   User? @relation(fields: [authorId], references: [id])
 authorId String?
+completed Boolean @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt  
 }
