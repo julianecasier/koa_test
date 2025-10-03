@@ -1,36 +1,36 @@
-const tasks = [
+export const tasks = [
   {
     title: 'Maquettes',
     content: 'Version 1 des maquettes',
 
-    date: '11 décembre 2023',
+    dueDate: '11 décembre 2023',
   },
   {
     title: 'Réunion',
     content: 'Réunion de lancement',
 
-    date: '3 février 2023',
+    dueDate: '3 février 2023',
   },
   {
     title: "Réunion d'équipe",
     content: 'Réunion de lancement',
 
-    date: '2 octobre 2022',
+    dueDate: '2 octobre 2022',
   },
   {
     title: 'Team builing',
     content: 'Campagne dans les bois',
 
-    date: '',
+    dueDate: '',
   },
   {
     title: 'POC',
     content: '',
 
-    date: '',
+    dueDate: '',
   },
 ];
-const users = [
+export const users = [
   {
     firstName: 'Jonh',
     lastName: 'Mainwaring',
@@ -44,8 +44,3 @@ const users = [
     password: 'monpassword',
   },
 ];
-
-module.exports = {
-  tasks,
-  users,
-};

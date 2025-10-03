@@ -1,6 +1,6 @@
 import { User } from '@prisma/client';
 import { CreateUserDto, UpdateUserDto } from './user-types';
-import prisma from '../../../prisma/client';
+import prisma from '../../../prisma/client.js';
 export class UserRepository {
   async create(data: CreateUserDto): Promise<User> {
     return prisma.user.create({ data });

@@ -1,19 +1,51 @@
 import { Task } from '@prisma/client';
 import { CreateTaskDto, UpdateTaskDto } from './task-types';
-import prisma from '../../../prisma/client';
+import prisma from '../../../prisma/client.js';
 
 export class TaskRepository {
   async create(data: CreateTaskDto): Promise<Task> {
     return prisma.task.create({ data });
   }
 
-  async findById(id: string): Promise<Task | null> {
-    return prisma.task.findUnique({ where: { id } });
+  async findById(id: string) {
+    return prisma.task.findUnique({
+      where: { id },
+      select: {
+        id: false,
+        dueDate: true,
+        title: true,
+        content: true,
+        completed: true,
+        createdAt: true,
+        updatedAt: false,
+        author: {
+          select: {
+            firstName: true,
+            lastName: true,
+          },
+        },
+      },
+    });
   }
 
-  async findAll(): Promise<Task[]> {
+  async findAll() {
     return prisma.task.findMany({
       orderBy: { createdAt: 'desc' },
+      select: {
+        id: false,
+        dueDate: true,
+        title: true,
+        content: true,
+        completed: true,
+        createdAt: true,
+        updatedAt: false,
+        author: {
+          select: {
+            firstName: true,
+            lastName: true,
+          },
+        },
+      },
     });
   }
 

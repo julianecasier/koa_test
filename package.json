@@ -9,7 +9,7 @@
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "format:all": "npm run lint:fix && npm run format:fix",
-    "seed": "node prisma/seed.js"
+    "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
     "@koa/router": "^14.0.0",
