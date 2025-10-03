@@ -8,7 +8,8 @@
     "paths": {
       "@routes/*": ["routes/*"],
       "@modules/*": ["modules/*"],
-      "@middlewares/*": ["middlewares/*"]
+      "@middlewares/*": ["middlewares/*"],
+      "@utils/*": ["utils/*"]
     },
     "strict": true,
     "esModuleInterop": true,

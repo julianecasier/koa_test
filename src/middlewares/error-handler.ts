@@ -1,6 +1,6 @@
 import { Context, Next } from 'koa';
 
-import { ErrorResponse } from '../utils/errors/api-errors.js';
+import { ErrorResponse } from '../utils/types/api-errors';
 import {
   hasDetails,
   hasMessage,
@@ -9,7 +9,7 @@ import {
   hasValidationErrors,
   isApiError,
   isPrismaError,
-} from 'utils/type-guards.js';
+} from '@utils/types/type-guards';
 
 export const errorHandler = async (ctx: Context, next: Next): Promise<void> => {
   try {

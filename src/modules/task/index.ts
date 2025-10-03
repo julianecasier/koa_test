@@ -1,16 +1,15 @@
-import { UserController } from './task.controller';
-import { UserService } from './task.service';
-import { UserRepository } from './task.repository';
-import { createUserRoutes } from './task.routes';
+import { TaskController } from './task.controller';
+import { TaskService } from './task.service';
+import { TaskRepository } from './task.repository';
+import { createTaskRoutes } from './task.routes';
 
-const userRepository = new UserRepository();
-const userService = new UserService(userRepository);
-const userController = new UserController(userService);
-const userRouter = createUserRoutes(userController);
+const taskRepository = new TaskRepository();
+const taskService = new TaskService(taskRepository);
+const taskController = new TaskController(taskService);
+const taskRouter = createTaskRoutes(taskController);
 
-// Export de l'objet module
-export const userModule = {
-  router: userRouter,
-  controller: userController,
-  service: userService,
+export const taskModule = {
+  router: taskRouter,
+  controller: taskController,
+  service: taskService,
 };

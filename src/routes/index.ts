@@ -1,5 +1,7 @@
 import Router from '@koa/router';
 import { userModule } from '@modules/user';
+import { taskModule } from '@modules/task';
+
 import { serverConfig } from 'config/env';
 import { renderHomePage } from '../views/home.view';
 
@@ -33,11 +35,6 @@ mainRouter.get('/health', ctx => {
   };
 });
 
-// Routes utilisateurs
-mainRouter.use(
-  `${apiPrefix}/users`,
-  userModule.router.routes(),
-  userModule.router.allowedMethods()
-);
-
+mainRouter.use(`${apiPrefix}/users`, userModule.router.routes());
+mainRouter.use(`${apiPrefix}/tasks`, taskModule.router.routes());
 export default mainRouter;

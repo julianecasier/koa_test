@@ -1,5 +1,5 @@
 import { Prisma } from '@prisma/client';
-import { ApiError, ErrorDetails } from './errors/api-errors';
+import { ApiError, ErrorDetails } from './api-errors';
 export function isApiError(error: unknown): error is ApiError {
   return error instanceof ApiError;
 }
